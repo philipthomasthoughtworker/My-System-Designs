@@ -34,13 +34,16 @@
      * 645 requests hourly \* 53B per request \= 34185KB storage hourly
      * average request was about 53B (average size of an address)
      * average buyer and supplier on an invoice without a line address 2 was about 107B
-       * 645 invoice approvals hourly \* 107B per buyer and supplier \= 69.01KB storage hourly
-       * 69.01KB \* 8 hours \= 552.08KB storage daily
-       * 552.08KB \* 261 actual working days \= 144092.88KB storage annually
-       * 1RU = 1KB; 1RU = $0.008 per hour for Cosmos DB regional
-         * 69.01KB \* $0.008 = $0.55 per hour ($1,148.4 annually)
-       * 1RU = 1KB; 1RU = $0.016/per hour for Cosmos DB multi-regional support
-         * 69.01KB \* $0.016 = $1.11 per hour ($2,317.68 annually)
+     * 645 invoice approvals hourly \* 107B per buyer and supplier \= 69.01KB storage hourly
+     * 69.01KB \* 8 hours \= 552.08KB storage daily
+     * 552.08KB \* 261 actual working days \= 144092.88KB storage annually
+       * Melissa Cost
+         * 1RU = 1KB; 1RU = $0.008 per hour for Cosmos DB regional
+           * 69.01KB \* $0.008 = $0.55 per hour ($1,148.4 annually)
+         * 1RU = 1KB; 1RU = $0.016/per hour for Cosmos DB multi-regional support
+           * 69.01KB \* $0.016 = $1.11 per hour ($2,317.68 annually)
+       * Bing API Cost
+       * Azure Cosmo DB Cost
   * Special system requirements such as multi-threading, read or write oriented.
 #### High level architecture design (abstract design)
 * **Sketch the important components and connections between them, but don't do into some details.**
