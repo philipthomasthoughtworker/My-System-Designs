@@ -1,8 +1,9 @@
 # System Design (Customer Mastering)
 * **Resources**
-  * https://gist.github.com/vasanthk/485d1c25737e8e72759f
-  * https://www.calculator.net/bandwidth-calculator.html
-  * https://convertlive.com/u/convert/bytes/to/kilobytes
+  * [System design check sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
+  * [Bandwidth calculator](https://www.calculator.net/bandwidth-calculator.html)
+  * [String length and byte converter](https://mothereff.in/byte-counter)
+  * [Azure Cosmos DB pricing](https://azure.microsoft.com/en-us/pricing/details/cosmos-db/)
 #### Clarify and agree on the scope of the system
 * **User cases**
   * Who is going to use it?
