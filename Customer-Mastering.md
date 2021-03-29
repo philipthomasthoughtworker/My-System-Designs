@@ -47,14 +47,12 @@
   * Application service layer (serves the requests)
     * Need a service to master customer records from legacy originating invoice systems.
   * List different services required.
-    * Need a service to perform address standardization and validation on buyer and supplier information.
     * Need a service to apply thresholds with a weighted rating system to score buyer and supplier address information.
     * Need a service to act as a anti-corruption translation layer for legacy originating invoice systems.
     * Later, we needed a service for the Change Feed Processor for Azure Cosmos DB.
   * Data Storage layer
     * Need a database solution that was great a maintaining a seemingly infinite number of relationships between buyers, suppliers, accounts, etc.
   * eg. Usually a scalable system includes webserver (load balancer), service (service partition), database (master/slave database cluster) and caching systems.
-    * Need for a caching solution for address standardization to help mitigate cost from using third-party service.
     * No need for a load balancer or load balance cluster (Future state would require it)
     * Later, we needed to deal with partition keys on logical partitions
     * Need for rate limiting to avoid spamming on address standardization service to help mitigate cost from using third-party service.
@@ -68,7 +66,6 @@
         * Scoring
         * Get supplier and buyers published from originating legacy invoice systems and anti-corruption layer
      * C# App Service Web App for Containers
-        * Address standardization
         * Azure Cosmos DB Change Feed Processor
           * for keeping edge data up-to-date
 * **Object oriented design for functionalities**
@@ -81,22 +78,17 @@
   * Azure Cosmos DB Graph Gremlin API
     * Vertices(Nodes) are standardized and validated Customers
     * Edges defines the relationship between Customers (Buyer/Supplier). If a Customer is "buying from", "supplying to", or "billing" another Customer
-  * Azure Cache for Redis
-    * Key being a hash of a standardized customer address
-    * Value is the actual standadized customer address (without additional vendor specific information on response)
-    * Eviction policy was least frequently used (LFU) and cache invalidated once a month after third-party vendor does updates.
 #### Understanding Bottlenecks
 * **Data integrity from the originating legacy invoice systems.**
 * **Cross-functional teams confidence level on determining the correct events from originating legacy invoice systems to master buyers and suppliers.**
 * **Determing ownership of the anti-corruption layers.**
 * **Determining the most effecient partition key for logical partition.**
-* **Determining the most complete and reliable address standardization vendor.**
 #### Scaling your abstract design
 * **Vertical scaling**
   * No spikes or peak hours that would require more processing power.
 * **Horizontal scaling**
   * No spikes that would require more servers.
 * **Caching**
-  * Caching on address standardization service to store standardized address to help mitigate cost.
+  * No spikes that would require more servers.
 * **Load balancing**
   * No need for load balancing on the initial thin slice of work.
