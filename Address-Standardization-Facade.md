@@ -41,32 +41,22 @@
 #### High level architecture design (abstract design)
 * **Sketch the important components and connections between them, but don't do into some details.**
   * Application service layer (serves the requests)
-    * Need a service to master customer records from legacy originating invoice systems.
+    * Need a service to accept buyer and supplier addresses for standardization and validation.
   * List different services required.
-    * Need a service to perform address standardization and validation on buyer and supplier information.
-    * Need a service to apply thresholds with a weighted rating system to score buyer and supplier address information.
-    * Need a service to act as a anti-corruption translation layer for legacy originating invoice systems.
-    * Later, we needed a service for the Change Feed Processor for Azure Cosmos DB.
+    * No other services are required
   * Data Storage layer
-    * Need a database solution that was great a maintaining a seemingly infinite number of relationships between buyers, suppliers, accounts, etc.
+    * Since this is a facade to an externally paid service API, no data storage is required.
   * eg. Usually a scalable system includes webserver (load balancer), service (service partition), database (master/slave database cluster) and caching systems.
     * Need for a caching solution for address standardization to help mitigate cost from using third-party service.
-    * No need for a load balancer or load balance cluster (Future state would require it)
-    * Later, we needed to deal with partition keys on logical partitions
     * Need for rate limiting to avoid spamming on address standardization service to help mitigate cost from using third-party service.
 #### Component Design
 * **Component + specific APIs required for each of them.**
   * Flagship API
      * C# App Service Web App for Containers
-        * Master data management customer platform
-  * Ancillary services
-     * C# Azure Function
-        * Scoring
-        * Get supplier and buyers published from originating legacy invoice systems and anti-corruption layer
-     * C# App Service Web App for Containers
         * Address standardization
-        * Azure Cosmos DB Change Feed Processor
-          * for keeping edge data up-to-date
+  * Ancillary services
+     * Azure Cache for Redis
+       * Caching standardized addresses for mitigating per call cost
 * **Object oriented design for functionalities**
   * Map features to modules: One scenario for one module.
   * Consider the relationships among modules
@@ -74,18 +64,13 @@
     * Core object can be made up of many other objects (composition).
     * One object is another object (inheritance)
 * **Data schema design.**
-  * Azure Cosmos DB Graph Gremlin API
-    * Vertices(Nodes) are standardized and validated Customers
-    * Edges defines the relationship between Customers (Buyer/Supplier). If a Customer is "buying from", "supplying to", or "billing" another Customer
   * Azure Cache for Redis
     * Key being a hash of a standardized customer address
     * Value is the actual standadized customer address (without additional vendor specific information on response)
-    * Eviction policy was least frequently used (LFU) and cache invalidated once a month after third-party vendor does updates.
+    * Eviction policy was least frequently used (LFU)
+    * Cache invalidated once a month after third-party vendor performs updates.
 #### Understanding Bottlenecks
 * **Data integrity from the originating legacy invoice systems.**
-* **Cross-functional teams confidence level on determining the correct events from originating legacy invoice systems to master buyers and suppliers.**
-* **Determing ownership of the anti-corruption layers.**
-* **Determining the most effecient partition key for logical partition.**
 * **Determining the most complete and reliable address standardization vendor.**
 #### Scaling your abstract design
 * **Vertical scaling**
@@ -96,7 +81,6 @@
   * Caching on address standardization service to store standardized address to help mitigate cost.
 * **Load balancing**
   * No need for load balancing on the initial thin slice of work.
-
 
 ## Resources
 * [Melissa Data Quality Suite](https://www.g2.com/products/melissa-data-quality-suite/pricing?__cf_chl_captcha_tk__=7cb9c2b3d41d2ccbfcd5c9088c278761467bb4f4-1617033984-0-Af9wiakf2Y15CFzj7uoDOHTuS6-bP-AEHJEOwfzIJ5d1kN-gHoXtFT6QpzzXrb2qtCsuen6ziKfZ_aiD0F6wNmK-jfzep_6INAIIxvi6POsgimsfLLAi63yXrFk8MI5MmRrn9yxCdkC5Ux9W8mJNyhOUfXmJUebgrYPZGOvhOnM-T1S2zMoWTkH1qEOpxDuLZ6O0UO8kQZt_1Rl9F5Rc-ok9pcAeiQbrD7wHyZL44QQeWQS8-pQur5s8_t9759odicmia8-SaOtOUgsNsqyqgW7g8x95wxue-fPQ9bL8JJB6tPjOT3Mj5XYORgjhRJrZYLC2ytCN0mJhT0h1j77AbWRH6IXMaWrfczJFedIWScfJl3YILOzy3uOIOTE5k3JNi1Plj7XE1g4Qw0oIfIVaCrgOc8RTOS9JeGFrLEapyKmXiG1ask7oftqcrffsTrJGCPnQGG_aRq-bY4Ioa533QrPc7bZ1ohd09jqfv1FEis30UatH1mZYhSVChABRa_Ul6J-Z5zr0ptrkG77Kvy8CW6Lui8tx3F6b2Mf7RU5PNhHKVajDa5_8gPMbaBy2B9gbOWSXY6Vv6KRwdqPmSRFagdBeHkAXq19LdX3Ud_Jpcu92QmYR7XJ65wsvMeUpi7qAEXH51TD5Bwwbz_Nd7uRr314)
