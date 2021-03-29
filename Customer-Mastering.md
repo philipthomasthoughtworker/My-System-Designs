@@ -1,6 +1,6 @@
 # System Design (Customer Mastering)
 * **Resources**
-  * [System design check sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
+  * [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
   * [Bandwidth calculator](https://www.calculator.net/bandwidth-calculator.html)
   * [String length and byte converter](https://mothereff.in/byte-counter)
   * [Azure Cosmos DB pricing](https://azure.microsoft.com/en-us/pricing/details/cosmos-db/)
