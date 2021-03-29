@@ -1,4 +1,4 @@
-# System Design
+# System Design (Address Standardization Facade)
 * **Resources**
   * https://gist.github.com/vasanthk/485d1c25737e8e72759f
   * https://www.calculator.net/bandwidth-calculator.html
@@ -6,33 +6,29 @@
 #### Clarify and agree on the scope of the system
 * **User cases**
   * Who is going to use it?
-    * Legacy invoice systems
-       * mastering new and existing supplier/buyer records
     * Data governance team
        * governance managing control and access to the data assets
-    * Customer experience team
-       * self customer registration
+    * Customer mastering (System I designed and delivered)
+       * Mastering new and existing customer regardless of the originating systems
   * How are they going to see it?
-    * Building a customer platform 
-       * based on MDM-registry with RPC and REST APIs endpoints
-    * Cross-functional team building a Customer experience
-       * self customer registration
+    * Consuming web service 
+       * Facade web service to external paid API
 * **Constraints**
   * Mainly identify traffic and data handling constraints at scale.
-     * Expected traffic was based on 1 of 10 originating legacy invoice systems
-       * however, we thin-sliced the MVP delivery by only working with one (1) originating legacy invoice system based on invoice approval state change
+     * Expected traffic was based on 1 of 10 consumers
+       * however, we thin-sliced the MVP delivery by only working with two (2) consumers based on need
   * Scale of the system such as requests per second, requests types, data written per second, data read per second
-     * based on invoice approval state change_
+     * based on need
      * request types
-       * either RPC or REST API
-     * DAU was 10 users approving invoices on the originating legacy system
-       * no spikes
-     * MAU was 300 users approving invoices on the originating legacy system
-     * 645 invoice approvals hourly
-     * 5,000 invoice approvals daily
-     * 150,000 invoice approvals annually
-     * 645 invoice approvals hourly \* 70KB per invoice \= 45,150KB storage hourly
-     * average invoice was about 50 to 75KB, **HOWEVER, WE ARE ONLY DEALING WITH A BUYER AND A SUPPLIER ON ANY GIVEN INVOICE**
+       * RPC API
+     * DAU was 10 users
+       * no spikes or peak hours
+     * MAU was 300 users
+     * 645 requests hourly
+     * 5,000 requests daily
+     * 150,000 requests annually
+     * 645 requests hourly \* 53B per request \= 34185KB storage hourly
+     * average request was about 53B (average size of an address)
      * average buyer and supplier on an invoice without a line address 2 was about 107B
        * 645 invoice approvals hourly \* 107B per buyer and supplier \= 69.01KB storage hourly
        * 69.01KB \* 8 hours \= 552.08KB storage daily
@@ -105,3 +101,4 @@
 ## Resources
 * [Melissa Data Quality Suite](https://www.g2.com/products/melissa-data-quality-suite/pricing?__cf_chl_captcha_tk__=7cb9c2b3d41d2ccbfcd5c9088c278761467bb4f4-1617033984-0-Af9wiakf2Y15CFzj7uoDOHTuS6-bP-AEHJEOwfzIJ5d1kN-gHoXtFT6QpzzXrb2qtCsuen6ziKfZ_aiD0F6wNmK-jfzep_6INAIIxvi6POsgimsfLLAi63yXrFk8MI5MmRrn9yxCdkC5Ux9W8mJNyhOUfXmJUebgrYPZGOvhOnM-T1S2zMoWTkH1qEOpxDuLZ6O0UO8kQZt_1Rl9F5Rc-ok9pcAeiQbrD7wHyZL44QQeWQS8-pQur5s8_t9759odicmia8-SaOtOUgsNsqyqgW7g8x95wxue-fPQ9bL8JJB6tPjOT3Mj5XYORgjhRJrZYLC2ytCN0mJhT0h1j77AbWRH6IXMaWrfczJFedIWScfJl3YILOzy3uOIOTE5k3JNi1Plj7XE1g4Qw0oIfIVaCrgOc8RTOS9JeGFrLEapyKmXiG1ask7oftqcrffsTrJGCPnQGG_aRq-bY4Ioa533QrPc7bZ1ohd09jqfv1FEis30UatH1mZYhSVChABRa_Ul6J-Z5zr0ptrkG77Kvy8CW6Lui8tx3F6b2Mf7RU5PNhHKVajDa5_8gPMbaBy2B9gbOWSXY6Vv6KRwdqPmSRFagdBeHkAXq19LdX3Ud_Jpcu92QmYR7XJ65wsvMeUpi7qAEXH51TD5Bwwbz_Nd7uRr314)
 * [Bing API](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/)
+* [Azure Cache for Redis](https://azure.microsoft.com/en-us/pricing/details/cache/)
