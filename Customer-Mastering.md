@@ -22,7 +22,7 @@
      * Expected traffic was based on 1 of 10 originating legacy invoice systems
        * however, we thin-sliced the MVP delivery by only working with one (1) originating legacy invoice system based on invoice approval state change
   * Scale of the system such as requests per second, requests types, data written per second, data read per second
-     * based on invoice approval state change_
+     * based on invoice approval state change
      * request types
        * either RPC or REST API
      * DAU was 10 users approving invoices on the originating legacy system
