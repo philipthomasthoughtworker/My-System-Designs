@@ -3,10 +3,7 @@
   * [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
   * [Bandwidth calculator](https://www.calculator.net/bandwidth-calculator.html)
   * [String length and byte converter](https://mothereff.in/byte-counter)
-  * [Azure Cosmos DB pricing](https://azure.microsoft.com/en-us/pricing/details/cosmos-db/)
-  * [Melissa Data Quality Suite](https://www.g2.com/products/melissa-data-quality-suite/pricing?__cf_chl_captcha_tk__=7cb9c2b3d41d2ccbfcd5c9088c278761467bb4f4-1617033984-0-Af9wiakf2Y15CFzj7uoDOHTuS6-bP-AEHJEOwfzIJ5d1kN-gHoXtFT6QpzzXrb2qtCsuen6ziKfZ_aiD0F6wNmK-jfzep_6INAIIxvi6POsgimsfLLAi63yXrFk8MI5MmRrn9yxCdkC5Ux9W8mJNyhOUfXmJUebgrYPZGOvhOnM-T1S2zMoWTkH1qEOpxDuLZ6O0UO8kQZt_1Rl9F5Rc-ok9pcAeiQbrD7wHyZL44QQeWQS8-pQur5s8_t9759odicmia8-SaOtOUgsNsqyqgW7g8x95wxue-fPQ9bL8JJB6tPjOT3Mj5XYORgjhRJrZYLC2ytCN0mJhT0h1j77AbWRH6IXMaWrfczJFedIWScfJl3YILOzy3uOIOTE5k3JNi1Plj7XE1g4Qw0oIfIVaCrgOc8RTOS9JeGFrLEapyKmXiG1ask7oftqcrffsTrJGCPnQGG_aRq-bY4Ioa533QrPc7bZ1ohd09jqfv1FEis30UatH1mZYhSVChABRa_Ul6J-Z5zr0ptrkG77Kvy8CW6Lui8tx3F6b2Mf7RU5PNhHKVajDa5_8gPMbaBy2B9gbOWSXY6Vv6KRwdqPmSRFagdBeHkAXq19LdX3Ud_Jpcu92QmYR7XJ65wsvMeUpi7qAEXH51TD5Bwwbz_Nd7uRr314)
-  * [Bing API](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/)
-  * [Azure Cache for Redis](https://azure.microsoft.com/en-us/pricing/details/cache/)
+  * [Damerau-Levenshtein minimum edit distance](https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance)
 #### Clarify and agree on the scope of the system
 * **User cases**
   * Who is going to use it?
