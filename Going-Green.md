@@ -1,8 +1,4 @@
 # System Design ([Going Green](http://fundamentalsofsoftwarearchitecture.com/katas/kata?id=GoingGreen))
-* **Resources**
-  * [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
-  * [Bandwidth calculator](https://www.calculator.net/bandwidth-calculator.html)
-  * [String length and byte converter](https://mothereff.in/byte-counter)
 #### Clarify and agree on the scope of the system
 * **Problem statement**
   * A large electronics store wants to get into the electronics recycling business and needs a new system to support it. Customers can send in their small personal electronic equipment (or use local kiosks at the mall) and possibly get money for their used equipment if it is in working condition.
@@ -77,3 +73,7 @@
 * **Horizontal scaling**
 * **Caching**
 * **Load balancing**
+* **Resources**
+  * [System design cheat sheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
+  * [Bandwidth calculator](https://www.calculator.net/bandwidth-calculator.html)
+  * [String length and byte converter](https://mothereff.in/byte-counter)
