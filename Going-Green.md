@@ -7,16 +7,18 @@
     * Hundreds, hopefully thousands to millions of customers that has accessibilty to either the internet and public or private transportation
   * How are they going to see it?
     * Web site via the internet
+    *  **Clarifying questions**
+       * Does this need to be accessed nationally, internationally, or globally **Assumptions can be made here**
     * Kiosk at a mall
       * **Clarifying questions**
         * Is the service providing the equipment for the kiosk? Or is rented/leased/purchased by third party? **Assumptions can be made here**
-        * How many devices can a kiosk support?
-        * What is the impact to business when dealing with device malfunctions that require hardware maintenance? Replacements?
+        * How many devices can a kiosk support? **Assumptions can be made here**
+        * What is the impact to business when dealing with device malfunctions that require hardware maintenance? Replacements? **Assumptions can be made here**
         * Are the devices using the same web solution as the home experience? **Assumptions can be made**
 * **Functional Requirements**
   * The system needs to provide customer with a qoute for their personal electronic equipment (Phones, Cameras, etc.) based on it's classification
     * **Clarifying questions** 
-      * Will the system allow customers to request multiple quotes (for multiple personal electronic equipments) within the same transaction to the service provider?
+      * Will the system allow customers to request multiple quotes (for multiple personal electronic equipments) within the same transaction to the service provider? **Assumptions can be made here**
       * What is the expiration date of the quote?
   * The system needs to be able to arrange delivery of personal electronic equipment to the requesting customer
     * Deliver the size appropriate shipping materials, label and postage based on the dimensions of the personal electronic equipment to the customer
@@ -53,6 +55,8 @@
 #### High level architecture design (abstract design)
 * **Sketch the important components and connections between them, but don't do into some details.**
   * Application service layer (serves the requests)
+    * The need to have an application that allows for user input
+    * The need to have an application that 
   * List different services required.
   * Data Storage layer
   * eg. Usually a scalable system includes webserver (load balancer), service (service partition), database (master/slave database cluster) and caching systems.
