@@ -33,24 +33,7 @@
    * The system needs to be capable of creating an Ebay auction of the personal electronic equipment
    * The system needs to be capable of arranging delivery of the personal electronic equipment to an Ebay auction winner
 * **Non-functional Requirements**
-  * Availability
-  * Reliability
-  * Maintainability
-  * Scalability
-  * Access Security
-  * Accessibility
-  * Elasticity
-  * Extensibility
-  * Response time
-  * Serviceability
-  * Testability
-  * Privacy
-  * Integrity
-  * Survivability
-  * Usability
-  * Verifiability
-  * Interoperability
-  * Portability
+  * Availability, Reliability, Maintainability, Scalability, Access Security, Accessibility, Elasticity, Extensibility, Response time, Serviceability, Testability, Privacy, Integrity, Survivability, Usability, Verifiability, Interoperability, Portability
 * **Constraints**
   * Mainly identify traffic and data handling constraints at scale.
   * Scale of the system such as requests per second, requests types, data written per second, data read per second
