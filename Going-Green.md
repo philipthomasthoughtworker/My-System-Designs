@@ -51,6 +51,10 @@
 * **Constraints**
   * Mainly identify traffic and data handling constraints at scale.
   * Scale of the system such as requests per second, requests types, data written per second, data read per second
+    * DAU - Daily average user
+    * MAU - Monthly average user
+    * Guestimation on average size of request
+       * [Sample request](https://pastebin.com/cHZTncv9)
   * Special system requirements such as multi-threading, read or write oriented.
 #### High level architecture design (abstract design)
 * **Sketch the important components and connections between them, but don't do into some details.**
