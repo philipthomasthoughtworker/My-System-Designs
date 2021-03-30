@@ -32,7 +32,7 @@
     * Deliver the size appropriate shipping materials, label and postage based on the dimensions of the personal electronic equipment to the customer
       * Service-level agreement on receiving the shipping materials, label and postage to the customer from the service provider
       * Service-level agreement on sending the personal electronic equipment back to the service provider
-   * <span style="color:orange">The system needs to be capable of managing personal electronic equipment inventory</span>
+   * <p style='color:orange'>The system needs to be capable of managing personal electronic equipment inventory</span>
    * The system needs to be capable of inspecting and ranking the condition of the personal electronic equipment based on it's classification
    * The system needs to be capable of arranging delivery of the personal electronic equipment to an approved recycling facility
    * The system needs to be capable of creating an Ebay auction of the personal electronic equipment
