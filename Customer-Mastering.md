@@ -31,6 +31,8 @@
        * based on MDM-registry with RPC and REST APIs endpoints
     * Cross-functional team building a Customer experience
        * self customer registration
+* **Functional Requirements**
+* **Non-functional Requirements**
 * **Constraints**
   * Mainly identify traffic and data handling constraints at scale.
      * Expected traffic was based on 1 of 10 originating legacy invoice systems
