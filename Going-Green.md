@@ -50,8 +50,14 @@
 #### High level architecture design (abstract design)
 * **Sketch the important components and connections between them, but don't do into some details.**
   * Application service layer (serves the requests)
-    * The need to have an application that allows for user input
-    * The need to have an application that 
+    * Capable of multi-factor authentican
+    * Capable of securely inputting personal information about themselves
+    * Capable of securely inputting personal electronic equipment
+    * Capable of securely returning quote information
+    * Capable of requesting shipping material, labels and postage based on dimensions of the personal electronic equipment
+    * Capable of securely providing information for sending payment for the personal electronic equipment
+    * Capable of caching sessions to be completed at a later time within a certain window of time.
+    * Capable of delivering receipts (Email, Text, Mail)
   * List different services required.
   * Data Storage layer
   * eg. Usually a scalable system includes webserver (load balancer), service (service partition), database (master/slave database cluster) and caching systems.
