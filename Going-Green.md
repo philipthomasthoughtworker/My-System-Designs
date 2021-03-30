@@ -46,11 +46,12 @@
        * DAU * 462 B = 462,000 bytes (0.000462 GB) daily
        * MAU * 462 B = 1,405,404 bytes (0.001405404 GB) monthly
        * AAU * 462 B = 16,863,000 bytes (0.016863 GB) annually
+    * **NOTE: Need to talk bandwidth, throughput and latency**
   * Special system requirements such as multi-threading, read or write oriented.
 #### High level architecture design (abstract design)
 * **Sketch the important components and connections between them, but don't do into some details.**
   * Application service layer (serves the requests)
-    * Capable of multi-factor authentican
+    * Capable of multi-factor authentication
     * Capable of securely inputting personal information about themselves
     * Capable of securely inputting personal electronic equipment
     * Capable of securely returning quote information
@@ -58,9 +59,14 @@
     * Capable of securely providing information for sending payment for the personal electronic equipment
     * Capable of caching sessions to be completed at a later time within a certain window of time.
     * Capable of delivering receipts (Email, Text, Mail)
+    * Capable of uploading images of devices
   * List different services required.
+    * Content Delivery Network (Eq. Azure CDN)
   * Data Storage layer
-  * eg. Usually a scalable system includes webserver (load balancer), service (service partition), database (master/slave database cluster) and caching systems.
+    * Caching (Eq. Azure Redis for Cache)
+    * Object storage (Eq. Azure Blob Storage)
+    * NoSQL JSON document database solution (Eg. Azure Cosmos Db SQL Core API)
+      * Partion key with highest cardinality to avoid Hot Partitioning and Cross Partition Querying
 #### Component Design
 * **Component + specific APIs required for each of them.**
   * Flagship API
