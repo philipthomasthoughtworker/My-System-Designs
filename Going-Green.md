@@ -28,7 +28,7 @@
     * **Clarifying question** 
       * Will the system allow customers to request multiple quotes (for multiple personal electronic equipments) within the same transaction to the service provider?
       * What is the expiration date of the quote?
-  * On behalf of the service provider, the system needs to be able to arrange delivery of personal electronic equipment to the requesting customer
+  * The system needs to be able to arrange delivery of personal electronic equipment to the requesting customer
     * Deliver the size appropriate shipping materials, label and postage based on the dimensions of the personal electronic equipment to the customer
       * Service-level agreement on receiving the shipping materials, label and postage to the customer from the service provider
       * Service-level agreement on sending the personal electronic equipment back to the service provider
