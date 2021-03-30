@@ -5,27 +5,21 @@
   * [String length and byte converter](https://mothereff.in/byte-counter)
 #### Clarify and agree on the scope of the system
 * **Problem statement**
-   * Problem
-      * A large electronics store wants to get into the electronics recycling business and needs a new system to support it. Customers can send in their small personal electronic equipment (or use local kiosks at the mall) and possibly get money for their used equipment if it is in working condition.
-    * Background
-    * Relevance
-    * Objectives
-  * Describe how things _should_ work.
-  * Explain the problem and state why it matters.
-  * Explain your probem's financial cost.
-  * Back up your claims.
-  * Propose a solution.
-  * Explain the benefits of your proposed solution(s).
-  * Conclude by summarizing the problem and solution.
+  * A large electronics store wants to get into the electronics recycling business and needs a new system to support it. Customers can send in their small personal electronic equipment (or use local kiosks at the mall) and possibly get money for their used equipment if it is in working condition.
 * **User cases**
   * Who is going to use it?
     * Hundreds, hopefully thousands to millions of customers that has accessibilty to either the internet and public or private transportation
   * How are they going to see it?
     * Web site via the internet
     * Kiosk at a mall
+      * **Clarifying questions**
+        * Is the service providing the equipment for the kiosk? Or is rented/leased/purchased by third party? **Assumptions can be made here**
+        * How many devices can a kiosk support?
+        * What is the impact to business when dealing with device malfunctions that require hardware maintenance? Replacements?
+        * Are the devices using the same web solution as the home experience? **Assumptions can be made**
 * **Functional Requirements**
   * The system needs to provide customer with a qoute for their personal electronic equipment (Phones, Cameras, etc.) based on it's classification
-    * **Clarifying question** 
+    * **Clarifying questions** 
       * Will the system allow customers to request multiple quotes (for multiple personal electronic equipments) within the same transaction to the service provider?
       * What is the expiration date of the quote?
   * The system needs to be able to arrange delivery of personal electronic equipment to the requesting customer
@@ -38,6 +32,17 @@
    * The system needs to be capable of creating an Ebay auction of the personal electronic equipment
    * The system needs to be capable of arranging delivery of the personal electronic equipment to an Ebay auction winner
 * **Non-functional Requirements**
+  * Availability
+  * Reliability
+  * Maintainability
+  * Scalability
+  * Security
+  * Accessibility
+  * Elasticity
+  * Extensibility
+  * Response time
+  * Serviceability
+  * Testability
 * **Constraints**
   * Mainly identify traffic and data handling constraints at scale.
   * Scale of the system such as requests per second, requests types, data written per second, data read per second
