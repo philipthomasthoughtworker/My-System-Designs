@@ -36,13 +36,20 @@
   * Reliability
   * Maintainability
   * Scalability
-  * Security
+  * Access Security
   * Accessibility
   * Elasticity
   * Extensibility
   * Response time
   * Serviceability
   * Testability
+  * Privacy
+  * Integrity
+  * Survivability
+  * Usability
+  * Verifiability
+  * Interoperability
+  * Portability
 * **Constraints**
   * Mainly identify traffic and data handling constraints at scale.
   * Scale of the system such as requests per second, requests types, data written per second, data read per second
