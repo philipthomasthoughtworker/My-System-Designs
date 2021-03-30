@@ -5,6 +5,9 @@
 * **User cases**
   * Who is going to use it?
     * Hundreds, hopefully thousands to millions of customers that has accessibilty to either the internet and public or private transportation
+    * **Clarifying questions**
+       * Is this the DAU, MAU or AAU (Daily, monthly and annual average user count)? **Assumptions can be made here**
+       * Are there peak times or spikes **Assumptions can be made**
   * How are they going to see it?
     * Web site via the internet
     *  **Clarifying questions**
@@ -51,10 +54,15 @@
 * **Constraints**
   * Mainly identify traffic and data handling constraints at scale.
   * Scale of the system such as requests per second, requests types, data written per second, data read per second
-    * DAU - Daily average user
-    * MAU - Monthly average user
-    * Guestimation on average size of request
+    * DAU - 1,000 Daily average user
+    * MAU - 30,400 Monthly average user
+    * AAU - 365,000 Annual average user
+    * Guestimation on size of requests to store
        * [Sample request](https://pastebin.com/cHZTncv9)
+       * 462 bytes per request
+       * DAU * 462 B = 462,000 bytes (0.000462 GB) daily
+       * MAU * 462 B = 1,405,404 bytes (0.001405404 GB) monthly
+       * AAU * 462 B = 16,863,000 bytes (0.016863 GB) annually
   * Special system requirements such as multi-threading, read or write oriented.
 #### High level architecture design (abstract design)
 * **Sketch the important components and connections between them, but don't do into some details.**
