@@ -5,8 +5,8 @@
   * [String length and byte converter](https://mothereff.in/byte-counter)
 #### Clarify and agree on the scope of the system
 * **Problem statement**
-  * Basic format
-    * Problem
+   * Problem
+      * A large electronics store wants to get into the electronics recycling business and needs a new system to support it. Customers can send in their small personal electronic equipment (or use local kiosks at the mall) and possibly get money for their used equipment if it is in working condition.
     * Background
     * Relevance
     * Objectives
@@ -19,7 +19,7 @@
   * Conclude by summarizing the problem and solution.
 * **User cases**
   * Who is going to use it?
-    * The basic customer that has accessibilty to either the internet and public or private transportation
+    * Hundreds, hopefully thousands to millions of customers that has accessibilty to either the internet and public or private transportation
   * How are they going to see it?
     * Web site via the internet
     * Kiosk at a mall
