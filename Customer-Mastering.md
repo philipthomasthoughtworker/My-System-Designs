@@ -5,6 +5,19 @@
   * [String length and byte converter](https://mothereff.in/byte-counter)
   * [Azure Cosmos DB pricing](https://azure.microsoft.com/en-us/pricing/details/cosmos-db/)
 #### Clarify and agree on the scope of the system
+* **Problem statement**
+  * Basic format
+    * Problem
+    * Background
+    * Relevance
+    * Objectives
+  * Describe how things _should_ work.
+  * Explain the problem and state why it matters.
+  * Explain your probem's financial cost.
+  * Back up your claims.
+  * Propose a solution.
+  * Explain the benefits of your proposed solution(s).
+  * Conclude by summarizing the problem and solution.
 * **User cases**
   * Who is going to use it?
     * Legacy invoice systems
